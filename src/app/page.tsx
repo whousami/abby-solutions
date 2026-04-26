@@ -2,41 +2,29 @@
 
 import { useState } from "react";
 
-/* ─── SVG Icons as components ─── */
+/* ─── SVG Icons ─── */
 
-function ShieldIcon({ className = "" }: { className?: string }) {
+function CompassLogo({ className = "" }: { className?: string }) {
   return (
     <svg
-      viewBox="0 0 80 96"
+      viewBox="0 0 64 64"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       className={className}
     >
       <defs>
-        <linearGradient id="shieldGold" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0%" stopColor="#f3dfa1" />
-          <stop offset="40%" stopColor="#e7bf43" />
-          <stop offset="70%" stopColor="#c9a436" />
-          <stop offset="100%" stopColor="#7d6421" />
-        </linearGradient>
-        <linearGradient id="arrowGold" x1="0.5" y1="1" x2="0.5" y2="0">
-          <stop offset="0%" stopColor="#c9a436" />
-          <stop offset="100%" stopColor="#f3dfa1" />
+        <linearGradient id="compassNeedle" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stopColor="#d4c08a" />
+          <stop offset="100%" stopColor="#a8893e" />
         </linearGradient>
       </defs>
-      <path
-        d="M40 4L8 20V44C8 66 22 85 40 92C58 85 72 66 72 44V20L40 4Z"
-        fill="url(#shieldGold)"
-        stroke="#7d6421"
-        strokeWidth="1.5"
-      />
-      <path
-        d="M40 68V28M40 28L28 42M40 28L52 42"
-        stroke="#0a1628"
-        strokeWidth="4"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
+      <circle cx="32" cy="32" r="28" stroke="#c5a55a" strokeWidth="1.5" opacity="0.3" />
+      <circle cx="32" cy="32" r="20" stroke="#c5a55a" strokeWidth="1" opacity="0.2" />
+      <polygon points="32,6 36,28 32,22 28,28" fill="url(#compassNeedle)" />
+      <polygon points="32,58 28,36 32,42 36,36" fill="#c5a55a" opacity="0.4" />
+      <polygon points="6,32 28,28 22,32 28,36" fill="#c5a55a" opacity="0.4" />
+      <polygon points="58,32 36,36 42,32 36,28" fill="#c5a55a" opacity="0.4" />
+      <circle cx="32" cy="32" r="3" fill="#c5a55a" />
     </svg>
   );
 }
@@ -44,9 +32,9 @@ function ShieldIcon({ className = "" }: { className?: string }) {
 function ChartIcon() {
   return (
     <svg viewBox="0 0 48 48" fill="none" className="w-10 h-10">
-      <rect x="6" y="28" width="8" height="14" rx="2" fill="#e7bf43" opacity="0.7" />
-      <rect x="20" y="18" width="8" height="24" rx="2" fill="#e7bf43" opacity="0.85" />
-      <rect x="34" y="8" width="8" height="34" rx="2" fill="#e7bf43" />
+      <rect x="6" y="28" width="8" height="14" rx="2" fill="#c5a55a" opacity="0.7" />
+      <rect x="20" y="18" width="8" height="24" rx="2" fill="#c5a55a" opacity="0.85" />
+      <rect x="34" y="8" width="8" height="34" rx="2" fill="#c5a55a" />
     </svg>
   );
 }
@@ -54,9 +42,9 @@ function ChartIcon() {
 function TargetIcon() {
   return (
     <svg viewBox="0 0 48 48" fill="none" className="w-10 h-10">
-      <circle cx="24" cy="24" r="18" stroke="#e7bf43" strokeWidth="2.5" fill="none" />
-      <circle cx="24" cy="24" r="11" stroke="#e7bf43" strokeWidth="2" fill="none" opacity="0.7" />
-      <circle cx="24" cy="24" r="4" fill="#e7bf43" />
+      <circle cx="24" cy="24" r="18" stroke="#c5a55a" strokeWidth="2.5" fill="none" />
+      <circle cx="24" cy="24" r="11" stroke="#c5a55a" strokeWidth="2" fill="none" opacity="0.7" />
+      <circle cx="24" cy="24" r="4" fill="#c5a55a" />
     </svg>
   );
 }
@@ -64,11 +52,11 @@ function TargetIcon() {
 function ReportIcon() {
   return (
     <svg viewBox="0 0 48 48" fill="none" className="w-10 h-10">
-      <rect x="10" y="4" width="28" height="40" rx="3" stroke="#e7bf43" strokeWidth="2.5" fill="none" />
-      <line x1="17" y1="16" x2="31" y2="16" stroke="#e7bf43" strokeWidth="2" opacity="0.6" />
-      <line x1="17" y1="22" x2="31" y2="22" stroke="#e7bf43" strokeWidth="2" opacity="0.6" />
-      <line x1="17" y1="28" x2="26" y2="28" stroke="#e7bf43" strokeWidth="2" opacity="0.6" />
-      <polyline points="17,36 22,32 27,35 31,30" stroke="#e7bf43" strokeWidth="2" fill="none" />
+      <rect x="10" y="4" width="28" height="40" rx="3" stroke="#c5a55a" strokeWidth="2.5" fill="none" />
+      <line x1="17" y1="16" x2="31" y2="16" stroke="#c5a55a" strokeWidth="2" opacity="0.6" />
+      <line x1="17" y1="22" x2="31" y2="22" stroke="#c5a55a" strokeWidth="2" opacity="0.6" />
+      <line x1="17" y1="28" x2="26" y2="28" stroke="#c5a55a" strokeWidth="2" opacity="0.6" />
+      <polyline points="17,36 22,32 27,35 31,30" stroke="#c5a55a" strokeWidth="2" fill="none" />
     </svg>
   );
 }
@@ -76,12 +64,12 @@ function ReportIcon() {
 function LedgerIcon() {
   return (
     <svg viewBox="0 0 48 48" fill="none" className="w-10 h-10">
-      <rect x="8" y="6" width="32" height="36" rx="3" stroke="#e7bf43" strokeWidth="2.5" fill="none" />
-      <line x1="20" y1="6" x2="20" y2="42" stroke="#e7bf43" strokeWidth="1.5" opacity="0.4" />
-      <line x1="8" y1="16" x2="40" y2="16" stroke="#e7bf43" strokeWidth="1.5" opacity="0.4" />
-      <line x1="8" y1="26" x2="40" y2="26" stroke="#e7bf43" strokeWidth="1.5" opacity="0.4" />
-      <line x1="8" y1="36" x2="40" y2="36" stroke="#e7bf43" strokeWidth="1.5" opacity="0.4" />
-      <path d="M26 20L30 24L36 14" stroke="#e7bf43" strokeWidth="2.5" strokeLinecap="round" fill="none" />
+      <rect x="8" y="6" width="32" height="36" rx="3" stroke="#c5a55a" strokeWidth="2.5" fill="none" />
+      <line x1="20" y1="6" x2="20" y2="42" stroke="#c5a55a" strokeWidth="1.5" opacity="0.4" />
+      <line x1="8" y1="16" x2="40" y2="16" stroke="#c5a55a" strokeWidth="1.5" opacity="0.4" />
+      <line x1="8" y1="26" x2="40" y2="26" stroke="#c5a55a" strokeWidth="1.5" opacity="0.4" />
+      <line x1="8" y1="36" x2="40" y2="36" stroke="#c5a55a" strokeWidth="1.5" opacity="0.4" />
+      <path d="M26 20L30 24L36 14" stroke="#c5a55a" strokeWidth="2.5" strokeLinecap="round" fill="none" />
     </svg>
   );
 }
@@ -89,8 +77,8 @@ function LedgerIcon() {
 function CheckCircle() {
   return (
     <svg viewBox="0 0 24 24" fill="none" className="w-6 h-6 shrink-0">
-      <circle cx="12" cy="12" r="10" fill="#e7bf43" opacity="0.15" />
-      <path d="M8 12.5L11 15.5L16 9.5" stroke="#c9a436" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+      <circle cx="12" cy="12" r="10" fill="#c5a55a" opacity="0.15" />
+      <path d="M8 12.5L11 15.5L16 9.5" stroke="#a8893e" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   );
 }
@@ -110,15 +98,13 @@ function Navbar() {
   return (
     <nav className="fixed top-0 w-full z-50 bg-navy-950/95 backdrop-blur-md border-b border-navy-800/50">
       <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-        {/* Logo */}
         <a href="#" className="flex items-center gap-3 group">
-          <ShieldIcon className="w-8 h-9 shield-glow transition-transform group-hover:scale-105" />
+          <CompassLogo className="w-8 h-8 shield-glow transition-transform group-hover:scale-105" />
           <span className="font-heading text-xl font-bold text-white tracking-wide">
             ABBY<span className="text-gold-400"> Solutions</span>
           </span>
         </a>
 
-        {/* Desktop links */}
         <div className="hidden md:flex items-center gap-8">
           {links.map((l) => (
             <a
@@ -137,7 +123,6 @@ function Navbar() {
           </a>
         </div>
 
-        {/* Mobile hamburger */}
         <button
           className="md:hidden text-white"
           onClick={() => setOpen(!open)}
@@ -153,7 +138,6 @@ function Navbar() {
         </button>
       </div>
 
-      {/* Mobile menu */}
       {open && (
         <div className="md:hidden bg-navy-950 border-t border-navy-800/50 px-6 pb-6 pt-4 space-y-4">
           {links.map((l) => (
@@ -179,19 +163,18 @@ function Navbar() {
   );
 }
 
-/* ─── Section Components ─── */
+/* ─── Sections ─── */
 
 function HeroSection() {
   return (
     <section className="relative min-h-screen flex items-center bg-navy-950 grain-overlay overflow-hidden">
-      {/* Decorative background elements */}
       <div className="absolute top-20 right-0 w-96 h-96 bg-gold-400/5 rounded-full blur-3xl" />
       <div className="absolute bottom-0 left-0 w-80 h-80 bg-navy-700/20 rounded-full blur-3xl" />
 
       <div className="relative z-10 max-w-6xl mx-auto px-6 pt-24 pb-16 w-full">
         <div className="max-w-3xl">
           <div className="animate-fade-in-up opacity-0">
-            <ShieldIcon className="w-16 h-20 mb-8 shield-glow" />
+            <CompassLogo className="w-16 h-16 mb-8 shield-glow" />
           </div>
 
           <p className="animate-fade-in-up opacity-0 animation-delay-100 text-gold-400 font-body text-sm tracking-[0.25em] uppercase mb-4 font-semibold">
@@ -227,7 +210,6 @@ function HeroSection() {
           </div>
         </div>
 
-        {/* Trust bar */}
         <div className="animate-fade-in opacity-0 animation-delay-600 mt-20 pt-10 border-t border-navy-800/50 grid grid-cols-2 md:grid-cols-4 gap-8">
           {[
             { num: "30+", label: "Years Experience" },
@@ -253,7 +235,6 @@ function AboutSection() {
     <section id="about" className="py-24 bg-white">
       <div className="max-w-6xl mx-auto px-6">
         <div className="grid md:grid-cols-2 gap-16 items-center">
-          {/* Left column */}
           <div>
             <p className="text-gold-500 font-semibold text-sm tracking-[0.2em] uppercase mb-3">
               Why ABBY Solutions
@@ -279,7 +260,6 @@ function AboutSection() {
             </p>
           </div>
 
-          {/* Right column — value props */}
           <div className="space-y-6">
             {[
               {
@@ -301,7 +281,7 @@ function AboutSection() {
             ].map((item) => (
               <div
                 key={item.title}
-                className="flex gap-4 p-5 rounded-lg bg-navy-50/50 border border-navy-100 hover:border-gold-300/50 hover:shadow-sm transition-all"
+                className="flex gap-4 p-5 rounded-lg bg-navy-50/50 border border-navy-100 hover:border-gold-400/50 hover:shadow-sm transition-all"
               >
                 <CheckCircle />
                 <div>
@@ -412,7 +392,6 @@ function ProcessSection() {
         <div className="grid md:grid-cols-3 gap-8">
           {steps.map((step, i) => (
             <div key={step.num} className="relative text-center md:text-left">
-              {/* Connector line (desktop only) */}
               {i < steps.length - 1 && (
                 <div className="hidden md:block absolute top-10 left-[60%] w-[80%] h-px bg-gradient-to-r from-gold-300 to-transparent" />
               )}
@@ -454,10 +433,7 @@ function TestimonialsSection() {
   ];
 
   return (
-    <section
-      id="testimonials"
-      className="py-24 bg-gradient-to-b from-navy-50 to-white"
-    >
+    <section id="testimonials" className="py-24 bg-gradient-to-b from-navy-50 to-white">
       <div className="max-w-6xl mx-auto px-6">
         <div className="text-center mb-16">
           <p className="text-gold-500 font-semibold text-sm tracking-[0.2em] uppercase mb-3">
@@ -476,14 +452,9 @@ function TestimonialsSection() {
           {testimonials.map((t, i) => (
             <div
               key={i}
-              className="p-8 rounded-xl bg-white border border-navy-100 shadow-sm hover:shadow-md hover:border-gold-300/40 transition-all"
+              className="p-8 rounded-xl bg-white border border-navy-100 shadow-sm hover:shadow-md hover:border-gold-400/40 transition-all"
             >
-              {/* Decorative quote mark */}
-              <svg
-                viewBox="0 0 32 32"
-                className="w-8 h-8 mb-4 text-gold-400/30"
-                fill="currentColor"
-              >
+              <svg viewBox="0 0 32 32" className="w-8 h-8 mb-4 text-gold-400/30" fill="currentColor">
                 <path d="M4 20.5C4 14.5 7.5 9 13 6.5L14.5 9C10 11.5 8.5 14.5 8 17H12.5C13.9 17 15 18.1 15 19.5V26.5C15 27.9 13.9 29 12.5 29H6.5C5.1 29 4 27.9 4 26.5V20.5ZM18 20.5C18 14.5 21.5 9 27 6.5L28.5 9C24 11.5 22.5 14.5 22 17H26.5C27.9 17 29 18.1 29 19.5V26.5C29 27.9 27.9 29 26.5 29H20.5C19.1 29 18 27.9 18 26.5V20.5Z" />
               </svg>
               <p className="text-navy-700 text-sm leading-relaxed mb-6 italic">
@@ -505,7 +476,7 @@ function ContactSection() {
   return (
     <section id="contact" className="py-24 bg-navy-950 grain-overlay relative">
       <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
-        <ShieldIcon className="w-12 h-14 mx-auto mb-6 shield-glow" />
+        <CompassLogo className="w-12 h-12 mx-auto mb-6 shield-glow" />
         <p className="text-gold-400 font-semibold text-sm tracking-[0.2em] uppercase mb-3">
           Get in Touch
         </p>
@@ -535,24 +506,17 @@ function ContactSection() {
           </a>
         </div>
 
-        {/* Contact details */}
         <div className="grid sm:grid-cols-3 gap-8 text-center border-t border-navy-800/50 pt-10">
           <div>
-            <p className="text-gold-400 text-sm font-semibold mb-1 tracking-wide uppercase">
-              Email
-            </p>
+            <p className="text-gold-400 text-sm font-semibold mb-1 tracking-wide uppercase">Email</p>
             <p className="text-navy-300 text-sm">contact@abbysolutions.com</p>
           </div>
           <div>
-            <p className="text-gold-400 text-sm font-semibold mb-1 tracking-wide uppercase">
-              Phone
-            </p>
+            <p className="text-gold-400 text-sm font-semibold mb-1 tracking-wide uppercase">Phone</p>
             <p className="text-navy-300 text-sm">(123) 456-7890</p>
           </div>
           <div>
-            <p className="text-gold-400 text-sm font-semibold mb-1 tracking-wide uppercase">
-              Location
-            </p>
+            <p className="text-gold-400 text-sm font-semibold mb-1 tracking-wide uppercase">Location</p>
             <p className="text-navy-300 text-sm">New Jersey, United States</p>
           </div>
         </div>
@@ -566,15 +530,13 @@ function Footer() {
     <footer className="bg-navy-950 border-t border-navy-800/50 py-10">
       <div className="max-w-6xl mx-auto px-6">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-          {/* Logo */}
           <div className="flex items-center gap-3">
-            <ShieldIcon className="w-6 h-7" />
+            <CompassLogo className="w-6 h-6" />
             <span className="font-heading text-base font-bold text-white">
               ABBY<span className="text-gold-400"> Solutions</span>
             </span>
           </div>
 
-          {/* Links */}
           <div className="flex gap-8">
             {["About", "Services", "Process", "Contact"].map((l) => (
               <a
@@ -587,7 +549,6 @@ function Footer() {
             ))}
           </div>
 
-          {/* Copyright */}
           <p className="text-navy-600 text-xs">
             &copy; {new Date().getFullYear()} ABBY Solutions. All rights reserved.
           </p>
